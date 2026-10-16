@@ -1,19 +1,33 @@
+import sys
+input = sys.stdin.readline
+ 
 t = int(input())
-
+ 
 for i in range(t):
-    expression = input().strip()  
-    split = expression.split()  
-    n1 = float(split[1])
-    op = split[2]
-    n2 = float(split[3])
-    
+    expr = input().split()
+    a = float(expr[1])
+    op = expr[2]
+    b = float(expr[3])
+ 
     if op == '+':
-        res = n1+n2
+        res = a + b
     elif op == '-':
-        res = n1-n2
+        res = a - b
     elif op == '*':
-        res = n1*n2
+        res = a * b
     elif op == '/':
-        res = n1/n2
-    
+        res = a / b
+    elif op == '%':
+        res = a % b
+    elif op == '&':
+        res = int(a) & int(b)
+    elif op == '|':
+        res = int(a) | int(b)
+    elif op == '^':
+        res = int(a) ^ int(b)
+    elif op == '<<':
+        res = int(a) << int(b)
+    elif op == '>>':
+        res = int(a) >> int(b)
+ 
     print(f"{res:.6f}")
